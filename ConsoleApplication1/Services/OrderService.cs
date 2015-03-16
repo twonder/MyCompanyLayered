@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Runtime.Remoting;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using MyCompany.Domain.Services.Events;
+using NServiceBus;
 
 namespace MyCompany.Domain.Services
 {
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IBillingService _billingService;
-        private readonly IEmailService _emailService;
+        private readonly IBus _bus;
 
-        public OrderService(IOrderRepository orderRepository, 
-            IBillingService billingService, 
-            IEmailService emailService)
+        public OrderService(IOrderRepository orderRepository, IBus bus)
         {
             _orderRepository = orderRepository;
-            _billingService = billingService;
-            _emailService = emailService;
+            _bus = bus;
         }
 
         public void CreateOrder(Order order)
@@ -26,13 +24,13 @@ namespace MyCompany.Domain.Services
             // save it
             _orderRepository.Save(order);
 
-            // make sure billing knows about this, we know about them
-            var customer = new Customer {FirstName = order.CustomerFirstName, 
-                LastName = order.CustomerLastName};
-            _billingService.CreateACustomerIfNotYetCreated(customer);
-
-            // send communication
-            _emailService.SendEmail("info@mycompany.com", order.CustomerEmail, "Thanks");
+            // tell others that care
+            _bus.Publish<OrderAccepted>(o =>
+            {
+                o.FirstName = order.CustomerFirstName;
+                o.LastName = order.CustomerLastName;
+                o.Email = order.CustomerEmail;
+            });
         }
     }
 }

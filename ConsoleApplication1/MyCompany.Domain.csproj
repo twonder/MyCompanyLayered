@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,11 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\BillingOrderHandler.cs" />
+    <Compile Include="Backend\EmailHandler.cs" />
+    <Compile Include="Bus.cs" />
+    <Compile Include="Events\OrderAccepted.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
