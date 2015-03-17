@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Remoting;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using MyCompany.Domain.Services.Events;
+﻿using MyCompany.Domain.Messages;
 using NServiceBus;
 
 namespace MyCompany.Domain.Services

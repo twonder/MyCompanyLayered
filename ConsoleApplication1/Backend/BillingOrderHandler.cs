@@ -1,4 +1,4 @@
-﻿using MyCompany.Domain.Services.Events;
+﻿using MyCompany.Domain.Messages;
 using NServiceBus;
 
 namespace MyCompany.Domain.Services.Backend

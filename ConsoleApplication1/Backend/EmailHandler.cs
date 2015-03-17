@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyCompany.Domain.Services.Events;
+﻿using MyCompany.Domain.Messages;
 using NServiceBus;
 
 namespace MyCompany.Domain.Services.Backend
