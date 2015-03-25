@@ -7,8 +7,8 @@
     <ProjectGuid>{0E53CD52-B98D-4EEA-944F-4AF5BD1D47CE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyCompany.Domain.Services</RootNamespace>
-    <AssemblyName>MyCompany.Domain.Services</AssemblyName>
+    <RootNamespace>MyCompany.Domain</RootNamespace>
+    <AssemblyName>MyCompany.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,8 +47,16 @@
     <Compile Include="Backend\BillingOrderHandler.cs" />
     <Compile Include="Backend\EmailHandler.cs" />
     <Compile Include="Bus.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Repositories\IOrderRepository.cs" />
+    <Compile Include="Services\IBillingService.cs" />
+    <Compile Include="Services\IEmailService.cs" />
+    <Compile Include="Services\IShippingService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PurchasePolicyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

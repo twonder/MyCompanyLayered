@@ -1,5 +1,7 @@
 ﻿using MyCompany.Domain.Messages;
+using MyCompany.Domain.Repositories;
 using NServiceBus;
+using Order = MyCompany.Domain.Models.Order;
 
 namespace MyCompany.Domain.Services
 {
@@ -35,34 +37,5 @@ namespace MyCompany.Domain.Services
     public interface IOrderService
     {
         void CreateOrder(Order order);
-    }
-
-    public interface IEmailService
-    {
-        void SendEmail(string to, string from, string body);
-    }
-
-    public interface IOrderRepository
-    {
-        void Save(Order order);
-    }
-
-    public class Order
-    {
-        public string CustomerFirstName { get; set; }
-        public string CustomerLastName { get; set; }
-        public string CustomerEmail { get; set; }
-        public decimal Amount { get; set; }
-    }
-
-    public interface IBillingService
-    {
-        void CreateACustomerIfNotYetCreated(Customer customer);
-    }
-
-    public class Customer
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
     }
 }

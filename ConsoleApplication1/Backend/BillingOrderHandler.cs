@@ -1,7 +1,7 @@
 ﻿using MyCompany.Domain.Messages;
 using NServiceBus;
 
-namespace MyCompany.Domain.Services.Backend
+namespace MyCompany.Domain.Backend
 {
     public class BillingOrderHandler : IHandleMessages<OrderAccepted>
     {
