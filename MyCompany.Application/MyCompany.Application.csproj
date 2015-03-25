@@ -48,7 +48,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication1\MyCompany.Domain.csproj">
+    <ProjectReference Include="..\MyCompany.Domain\MyCompany.Domain.csproj">
       <Project>{0e53cd52-b98d-4eea-944f-4af5bd1d47ce}</Project>
       <Name>MyCompany.Domain</Name>
     </ProjectReference>

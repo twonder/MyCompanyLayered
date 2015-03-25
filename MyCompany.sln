@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Domain", "ConsoleApplication1\MyCompany.Domain.csproj", "{0E53CD52-B98D-4EEA-944F-4AF5BD1D47CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Domain", "MyCompany.Domain\MyCompany.Domain.csproj", "{0E53CD52-B98D-4EEA-944F-4AF5BD1D47CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Messages", "MyCompany.Messages\MyCompany.Messages.csproj", "{0BCAB1C8-27D8-470A-8193-CB5A7A4B21DC}"
 EndProject
